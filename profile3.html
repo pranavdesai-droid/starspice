@@ -1,0 +1,353 @@
+<html>
+<head>
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	
+	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+
+
+
+<style>
+
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
+
+*{
+  
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  font-family: 'Josefin Sans', sans-serif;
+  
+}
+
+body{
+   background-color: #f3f3f3;
+   
+}
+
+.wrapper{
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  transform: translate(-50%,-50%);
+  width: 250px;
+  display: flex;
+  box-shadow: 0 1px 20px 0 rgba(69,90,100,.08);
+}
+
+.wrapper .left{
+  width: 250px;
+  background: linear-gradient(to right,#01a9ac,#01dbdf);
+  padding: 20px 20px 10px 20px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  text-align: center;
+  color: #fff;
+}
+
+.wrapper .left img{
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.wrapper .left h4{
+  margin-bottom: 10px;
+}
+
+.wrapper .left p{
+  font-size: 12px;
+}
+
+.wrapper .right{
+  width: 700px;
+  background: #fff;
+  padding: 30px 25px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.wrapper .right .info,
+.wrapper .right .projects{
+  margin-bottom: 25px;
+}
+
+.wrapper .right .info h3,
+.wrapper .right .projects h3{
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #e0e0e0;
+    color: #353c4e;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+
+.wrapper .right .info_data,
+.wrapper .right .projects_data{
+  display: flex;
+  justify-content: space-between;
+}
+
+.wrapper .right .info_data .data,
+.wrapper .right .projects_data .data{
+  width: 45%;
+  border-left:200px;
+}
+
+.wrapper .right .info_data .data h4,
+.wrapper .right .projects_data .data h4{
+    color: #353c4e;
+    margin-bottom: 5px;
+}
+
+.wrapper .right .info_data .data p,
+.wrapper .right .projects_data .data p{
+  font-size: 13px;
+  margin-bottom: 10px;
+  color: #919aa3;
+}
+.wrapper .social_media{
+
+float:left;
+position:relative;
+left:0px;
+}
+
+
+
+
+
+.wrapper .social_media ul{
+  display: flex;
+  float:left;
+}
+
+.wrapper .social_media ul li{
+  width: 45px;
+  height: 45px;
+  background: linear-gradient(to right,#01a9ac,#01dbdf);
+  margin-right: 10px;
+  border-radius: 5px;
+  text-align: center;
+  line-height: 45px;
+  float:left;
+}
+
+.wrapper .social_media ul li a{
+  color :#fff;
+  display: block;
+  font-size: 18px;
+  margin-top:12px;
+  
+}
+
+#email{
+
+
+ }
+ 
+ #edit{
+ 
+ width:50px;
+ margin:10px 30px;
+ 
+ }
+ 
+#email1{
+
+	width:300px;
+	text-decoration:none;
+}
+
+.open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+  position :relative;
+  top:-5px;
+  right:-155px;
+}
+
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: -50px;;
+  right: 10px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+  }
+
+/* Add styles to the form container */
+.form-container {
+  width: 300px;
+  padding: 20px;
+  
+  
+ 
+  background-color: white;
+  
+  position:relative;
+  right:-5px;
+  top:-30px;
+}
+
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+</style>
+
+
+</style>
+
+<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+
+  
+<div class="wrapper">
+
+    <div class="left">
+        <img src="images/pranav123.jpg" width="200">
+        <h4>Pranav Desai</h4>
+         <p>Web Developer</p>
+    </div>
+
+
+    <div class="col-lg-5 visible-lg ">
+    <div class="right">
+        <div class="info">
+            <h3>Information</h3>
+            <div class="info_data">
+			 <div class="data">
+                 
+                    <h4>Email</h4>
+					
+                    <p id="email1">email4pranav@gmail.com</p>
+                 </div>
+                 <div class="data">
+                   <h4>Phone</h4>
+                    <p id="phone1">9594857755</p>
+              </div>
+            </div>
+        </div>
+        <div class="projects">
+		<div class="projects_data">
+                 <div class="data">
+                    <h4>DOB</h4>
+                    <p>21/02/2000</p>
+                 </div>
+                 <div class="data">
+                   <h4>CLASS</h4>
+                    <p>B1</p>
+              </div>
+            </div>
+        </div>
+      
+		
+      
+        <div class="social_media">
+            <ul>
+              <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+              <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+              <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+          </ul>
+		  
+		  
+      </div>
+	  
+	  <button class="open-button" onclick="openForm()">Edit Form</button>
+
+<div class="form-popup" id="myForm">
+  <form action="/action_page.php" class="form-container">
+    
+
+    <label for="email"><b>Email</b></label>
+    <input type="text" value="" id="123" name="email" required>
+
+    <label for="psw"><b>Phone</b></label>
+    <input type="text" value="" id="456" name="psw" required>
+
+    <button type="button" class="btn" id="edit1" onclick="closeForm()">Edit</button>
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+  </form>
+  
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+document.getElementById("123").value = document.getElementById("email1").innerHTML;
+document.getElementById("456").value = document.getElementById("phone1").innerHTML;
+
+document.getElementById("edit1").onclick = function(){
+
+document.getElementById("email1").innerHTML = document.getElementById("123").value;
+document.getElementById("phone1").innerHTML = document.getElementById("456").value;
+
+
+
+}
+
+
+
+
+</script>
